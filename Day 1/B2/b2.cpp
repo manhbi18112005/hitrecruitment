@@ -22,16 +22,16 @@ void solve() {
         a=t;
         s[t]++;
     }
-    long long d;
-    d=0;
+    long long dem;
+    dem=0;
     for(int i=1;i<=a;i++) {
         if(s[i]>=2) {
             long long c;
             c=check(s[i])/(2*check(s[i]-2));
-            d=(d+c);
+            dem=(dem+c);
         }
     }
-    cout << d;
+    cout << dem;
 }
 int main() {
     solve();

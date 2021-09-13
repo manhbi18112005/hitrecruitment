@@ -3,6 +3,7 @@ using namespace std;
 #define fr(name) freopen(name, "r", stdin);
 #define fw(name) freopen(name, "w", stdout);
 
+int Q;
 bool check(int x) {
     if(x == 1) return false;
     for(int i = 2; i*i<=x; i++)
@@ -12,7 +13,6 @@ bool check(int x) {
 void solve() {
     fr("PRIME.INP");
     fw("PRIME.OUT");
-    int Q;
     cin >> Q;
     int L[Q], R[Q];
     int dem[Q];
