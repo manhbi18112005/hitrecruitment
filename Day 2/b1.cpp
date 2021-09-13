@@ -24,10 +24,11 @@ void solve() {
         int f = b-a+1; //10
         for(int j = a; j <= b; j++) {
             for(int k = 2; k < b; k++) {
-                if(j % k == 0) continue;
+                if(j % k == 0) return;
+                tong++;
             }
-            tong++;
         }
+        cout << tong;
         dem[i] = tong;
     }
     for(int i = 1; i <= Q; i++) {
