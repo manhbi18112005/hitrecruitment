@@ -3,12 +3,19 @@ using namespace std;
 #define fr(name) freopen(name, "r", stdin);
 #define fw(name) freopen(name, "w", stdout);
 
-int Q;
+bool check(int x) {
+    if(x == 1) return false;
+    for(int i = 2; i*i<=x; i++)
+        if(x%i==0) return false;
+    return true;
+}
 void solve() {
+    fr("PRIME.INP");
+    fw("PRIME.OUT");
+    int Q;
     cin >> Q;
-    int dem[Q];
-    //  fr("PRIME.INP");
     int L[Q], R[Q];
+    int dem[Q];
     for(int i = 1; i <= Q; i++) {
         int a, b;
         cin >> a >> b;
@@ -19,24 +26,15 @@ void solve() {
     for(int i = 1; i <= Q; i++) {
         int tong = 0;
         int a, b;
-        a = L[i]; //20
-        b = R[i]; //30
-        int f = b-a+1; //10
-        for(int j = a; j <= b; j++) {
-            for(int k = 2; k < b; k++) {
-                if(j % k == 0) return;
-                tong++;
-            }
-        }
-        cout << tong;
+        a = L[i];
+        b = R[i];
+        for(int j = a; j <= b; j++)
+            if(check(j)) tong++;
         dem[i] = tong;
     }
-    for(int i = 1; i <= Q; i++) {
+    for(int i = 1; i <= Q; i++)
         cout << dem[i] << endl;
-    }
 }
-
 int main() {
     solve();
-
 }
