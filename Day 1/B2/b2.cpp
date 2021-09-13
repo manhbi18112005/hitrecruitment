@@ -1,30 +1,39 @@
-#include<bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
-#define fr(name) freopen(name, "r", stdin);
-#define fw(name) freopen(name, "w", stdout);
-
-
-void solve() {
-    int n;
-    cin >> n;
-    int a[n];
-    int cap = 0;
-    for(int i = 1; i <= n; i++) {
-        int heh;
-        cin >> heh;
-        a[i] = heh;
-    }
-    for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
-            if(a[i] == a[j]) {
-                cap++;
-                cout << a[i];
-            }
-        }
-    }
-    cout << cap;
+long long ch(int x)
+{
+   long long a=1;
+   for(int i=2;i<=x;i++)
+   {
+       a=a[i];
+   }
+   return(a);
 }
-int main() {
-    solve();
-    return 0;
+int main()
+{
+    int n;
+    int s[100000];
+    int t,a;
+    a=0;
+    cin >> n;
+    for(int i=1;i<=n;i++)
+    {
+            cin >>  t;
+            if(a < t)
+                a=t;
+            s[t]++;
+    }
+    long long d;
+    d=0;
+    for(int i=1;i<=a;i++)
+    {
+            if(s[i]>=2)
+                    {
+                        long long c;
+                        c=ch(s[i])/(2ch(s[i]-2));
+                        d=(d+c);
+                    }
+    }
+    cout << d;
 }
